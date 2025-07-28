@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Prakhar Mathur | Java Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --bg: #ecf0f3;
+      --accent: #f5f7fa;
+      --text: #22223b;
+      --darker: #3c4f76;
+      --shadow: 0 4px 24px rgba(40,54,80,0.08);
+    }
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 100%);
+      margin: 0; padding: 0;
+      color: var(--text);
+    }
+    header {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 90px 24px 56px 24px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: .4em;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+    header .typewriter {
+      font-size: 1.45rem;
+      font-weight: 400;
+      height: 32px;
+      display: inline-block;
+      margin-bottom: 30px;
+      letter-spacing: .2px;
+      color: #e0eaff;
+    }
+    .hero-btns {
+      margin: 16px 0 0 0;
+    }
+    .hero-btns a {
+      text-decoration: none;
+      border: none;
+      font-size: 1rem;
+      background: #fff;
+      color: var(--primary);
+      padding: 10px 24px;
+      border-radius: 30px;
+      box-shadow: 0 2px 16px rgba(40,54,80,0.06);
+      margin: 0 6px;
+      transition: background .2s, color .2s, transform .15s;
+      display: inline-block;
+      font-weight: 600;
+    }
+    .hero-btns a:hover {
+      background: #dbeafe;
+      color: var(--darker);
+      transform: translateY(-2px) scale(1.04);
+    }
+    .socials {
+      margin: 24px 0 0 0;
+    }
+    .socials a {
+      color: #e5eaf5;
+      font-size: 1.3rem;
+      margin: 0 6px; 
+      transition: color 0.18s;
+    }
+    .socials a:hover { color: #ffd43b; }
+    
+    main {
+      max-width: 760px;
+      margin: 44px auto 0 auto;
+      background: #fff;
+      box-shadow: var(--shadow);
+      border-radius: 18px;
+      padding: 36px 28px 18px 28px;
+      position: relative;
+    }
+    section {
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 1.4em;
+      border-left: 4px solid var(--primary);
+      padding-left: 13px;
+      font-weight: 700;
+      margin-bottom: 13px;
+      color: var(--primary);
+      letter-spacing: 1px;
+    }
+    ul, li { list-style-type: none; margin: 0; padding: 0; }
+    ul.skills-list {
+      display: flex; flex-wrap: wrap; gap: 13px;
+      margin-bottom: 0;
+    }
+    ul.skills-list li {
+      background: #e7eaf6;
+      color: var(--darker);
+      border-radius: 17px;
+      padding: 6px 15px;
+      font-size: .98em;
+      box-shadow: 0 2px 8px rgba(30,54,80,0.04);
+      margin-bottom: 0;
+      cursor: default;
+      letter-spacing: 0.2px;
+    }
+    .exp-item:not(:last-child) { margin-bottom: 15px; }
+    .exp-item h3 { font-size: 1.12em; margin: 0; font-weight: 600; color: var(--darker);}
+    .exp-item small { color: #7a7a7a; }
+    .exp-item ul { margin-left: 17px; margin-bottom: 8px;}
+    .project-list { display: flex; flex-direction: column; gap: 10px; }
+    .project-item {
+      background: #f6f8fc;
+      border-radius: 12px;
+      padding: 13px 18px;
+      box-shadow: 0 1px 6px rgba(40,54,80,0.04);
+      margin-bottom: 6px;
+    }
+    .project-item strong { color: var(--primary); }
+    .edu-list li { margin-bottom: 5px; }
+    .achieve-list li { margin-bottom: 5px;}
+    .intern-box {
+      background: #e2eafc;
+      border-radius: 10px;
+      padding: 11px 18px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 8px rgba(30,54,80,0.04);
+    }
+    footer {
+      margin-top: 38px;
+      text-align: center;
+      color: #888;
+      padding-bottom: 25px;
+      font-size: 1em;
+    }
+    @media (max-width: 650px) {
+      main { padding: 20px 7vw 10px 7vw; }
+      header { padding: 42px 9vw 28px 9vw;}
+      .typewriter { font-size: 1.1em;}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Prakhar Mathur</h1>
+    <div class="typewriter" id="typewriter"></div>
+    <div class="hero-btns">
+      <a href="mailto:prakharmathur2022@gmail.com"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <a href="https://github.com/prakharmathur1807" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://linkedin.com/in/prakhar-mathur" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+    <div class="socials">
+      <a href="https://github.com/prakharmathur1807" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/prakhar-mathur" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </header>
+  <main>
+    <section>
+      <h2>Professional Summary</h2>
+      <p>
+        Java Developer with 3+ years of expertise in building scalable, robust web applications using Spring Boot, REST APIs, and Microservices. Adept at AWS, automation, and optimizing databases for fast, secure, and cost-effective solutions. Collaborative, proactive, and passionate about solving real-world problems with cutting-edge tech.
+      </p>
+    </section>
+    <section>
+      <h2>Technical Skills</h2>
+      <ul class="skills-list">
+        <li><i class="fab fa-java"></i> Java</li>
+        <li><i class="fab fa-js"></i> JavaScript</li>
+        <li><i class="fas fa-database"></i> SQL, MySQL, AWS Athena</li>
+        <li>Spring Boot, Spring MVC, Spring Security</li>
+        <li>REST APIs, Microservices</li>
+        <li>Hibernate</li>
+        <li>HTML5, CSS3, JSP, jQuery, Bootstrap</li>
+        <li>AWS S3, Ansible</li>
+        <li>Meta API</li>
+        <li>Tools: Eclipse, Tomcat, Maven, Postman, JIRA</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Experience</h2>
+      <div class="exp-item">
+        <h3>Associate Java Developer, ValueFirst <small>(May 2022 – Present, Gurugram)</small></h3>
+        <ul>
+          <li>Increased efficiency by 40% via optimized CRUD operations</li>
+          <li>Boosted security (2FA, Spring Security + OTP)</li>
+          <li>Reduced server task time 30% with Ansible automation</li>
+          <li>Enhanced UX by 20% (carousel UI, JSP/jQuery/Bootstrap)</li>
+          <li>Ensured data reliability with Meta API integration</li>
+          <li>Accelerated response time by 35% (API & DB optimizations)</li>
+          <li>Automated SMS for 25% higher delivery</li>
+          <li>Improved throughput by 40% with robust REST APIs</li>
+          <li>Reduced critical issues by 70% (bug fixes & features)</li>
+          <li>Cut manual monitoring effort by 60% (alert/filter tools)</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <h2>Projects</h2>
+      <div class="project-list">
+        <div class="project-item">
+          <strong>User Management System</strong><br>
+          Role-based access (Spring Boot & Hibernate) securing CRUD for users/admins.
+        </div>
+        <div class="project-item">
+          <strong>Scheduler Application</strong><br>
+          File splitting, ZIP, and scheduled email delivery. Automates bulk tasks for teams.
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Internship</h2>
+      <div class="intern-box">
+        <strong>Lorhan IT, Web Developer</strong> (Aug–Nov 2021, Hyderabad)
+        <ul>
+          <li>Developed e-commerce UIs (+30% engagement)</li>
+          <li>Improved loading time 20%</li>
+          <li>Fixed 50+ UI/UX bugs (25% reduction in feedback)</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <h2>Education</h2>
+      <ul class="edu-list">
+        <li>B.Tech (CSE), Galgotias University (2018–22)</li>
+        <li>High School, Bal Bharti School (Prayagraj)</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Achievements</h2>
+      <ul class="achieve-list">
+        <li>Star of the Quarter, ValueFirst (Mar 2024)</li>
+        <li>FIDE Candidate Master, Chess (2022)</li>
+        <li>2nd Place, Chess, National Fest 2019</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Prakhar Mathur &mdash; Portfolio <span style="font-size:1.1em;color:#2573e6;">&#10084;</span>
+  </footer>
+
+  <script>
+    // Typing effect for headline
+    const txt = [
+      "Full Stack Java Developer",
+      "Spring Boot & Microservices Enthusiast",
+      "Expert in Web Performance & Security",
+      "Building Scalable Solutions",
+      "Open for Collaboration"
+    ];
+    let i = 0, j = 0, isDeleting = false, current = '';
+    function type() {
+      if (j < txt[i].length && !isDeleting) {
+        current += txt[i][j++];
+        document.getElementById('typewriter').textContent = current + '|';
+      } else if (isDeleting && j > 0) {
+        current = current.slice(0, --j);
+        document.getElementById('typewriter').textContent = current + '|';
+      } else {
+        if (!isDeleting) {
+          isDeleting = true;
+          setTimeout(type, 700);
+          return;
+        }
+        isDeleting = false;
+        i = (i + 1) % txt.length;
+        j = 0; current = '';
+      }
+      setTimeout(type, isDeleting ? 38 : 70);
+    }
+    type();
+  </script>
+</body>
+</html>
