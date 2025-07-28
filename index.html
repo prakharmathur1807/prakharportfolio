@@ -22,7 +22,7 @@
       --green: #22fd9f;
     }
     html {
-      scroll-padding-top: 77px; /* Fix anchor offset for sticky nav */
+      scroll-padding-top: 77px;
     }
     body {
       font-family: 'Montserrat', Arial, sans-serif;
@@ -81,7 +81,6 @@
     }
     .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
     .hamburger span {width:24px;height:3px;background:var(--accent);border-radius:2px;}
-    /* Hero + Particles */
     #hero-bg-canvas {position: absolute;top: 0;left: 0;width: 100vw;height: 100%;z-index: 0;}
     header {
       background: none;
@@ -102,22 +101,30 @@
       font-size: 1.29rem;
       font-weight: 400;
       min-height: 32px;
-      margin-bottom: 44px;
+      margin-bottom: 28px;
       letter-spacing: 0.13px;
       color: var(--primary);
       text-shadow: 0 0 8px #f500f9a9,0 2px 14px var(--primary);
       z-index:4;
+      word-break: break-word;
     }
-    .hero-btns {margin:20px 0 0 0;z-index:3;}
+    .hero-btns {
+      margin: 16px 0 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 11px;
+    }
     .hero-btns a {
       text-decoration: none;
       font-size: 1.07rem;
-      padding: 12px 28px;
+      padding: 12px 24px;
       border-radius: 33px;
       font-weight: 700;
-      margin: 0 7px;
       background:linear-gradient(90deg,var(--primary) 6%, var(--accent) 92%);
       color:#fff;
+      min-width: 120px;
+      text-align: center;
       box-shadow: 0 0 24px #24f0ff91,0 1.5px 18px #a700ff48;
       transition: background .18s,filter .18s,transform .13s;
       filter: drop-shadow(0 2px 12px #9308e2);
@@ -125,6 +132,7 @@
       letter-spacing:.15px;
       position:relative;
       overflow:hidden;
+      margin: 0;
     }
     .hero-btns a:hover {
       background:linear-gradient(87deg,#fff 28%,#f500f9 100%);
@@ -134,12 +142,18 @@
       transform: scale(1.05) translateY(-1.5px);
     }
     .socials {
-      margin: 32px 0 0 0; z-index:4; position:relative;
+      margin: 23px 0 0 0;
+      z-index:4;
+      position:relative;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
     }
     .socials a {
-      color: var(--green); font-size: 1.44rem; margin: 0 9px;
+      color: var(--green); font-size: 1.44rem;
       filter: drop-shadow(0 0 6px #1ef7b8b8);
       text-shadow: 0 2px 17px #f500f993;
+      margin: 0 3px;
     }
     .socials a:hover { color: var(--bluelight); }
     main { max-width: 870px;margin: 44px auto 0 auto;padding: 0 6vw 18px 6vw; position:relative; }
@@ -186,15 +200,21 @@
       border: 1.7px solid var(--bluelight);
       filter: drop-shadow(0 0 7px var(--accent));
       transition: filter .21s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
-    ul.skills-list li:hover {filter: brightness(1.2) drop-shadow(0 0 15px #04ddff);}
+    ul.skills-list li img,
+    ul.skills-list li i,
+    ul.skills-list li span {
+      margin-right: 6px;
+    }
+    ul.skills-list li:hover {filter: brightness(1.15) drop-shadow(0 0 15px #04ddff);}
     .exp-item:not(:last-child){margin-bottom:16px;}
     .exp-item h3{font-size:1.15em;margin:0;font-weight:600;color:var(--primary);}
     .exp-item small{color:#cf99fe;}
     .exp-item ul{margin-left:15px;margin-bottom:9px;}
-    .project-list{
-      display:flex;flex-direction:column;gap:12px;
-    }
+    .project-list{display:flex;flex-direction:column;gap:12px;}
     .project-item {
       background: linear-gradient(110deg, #120052 67%, #4b008480 100%);
       border-radius: 15px;
@@ -277,7 +297,68 @@
       letter-spacing: .21px;
       text-shadow: 0 0 2px #f500f99f;
     }
-    /* Responsive */
+    /* ======= MOBILE CSS IMPROVEMENTS ======= */
+    @media (max-width: 650px) {
+      header {
+        padding: 85px 2vw 18px 2vw;
+      }
+      .navbar-container {
+        padding: 9px 2vw;
+      }
+      .glass {
+        padding: 1.06em 0.6em 0.85em 0.6em;
+        margin-bottom: 1.1em;
+      }
+      main {
+        padding: 0 1.5vw 14px 1.5vw;
+      }
+      h1 {
+        font-size: 1.48em;
+      }
+      h2 {
+        font-size: 1.05em;
+        padding-left: 7px;
+      }
+      .skills-list {
+        gap: 8px;
+      }
+      ul.skills-list li {
+        padding: 7px 7px;
+        min-width: 80px;
+        font-size: 0.97em;
+      }
+      .project-item {
+        padding: 10px 6px;
+        font-size: 0.97em;
+      }
+      .intern-box {
+        padding: 8px 6px;
+        font-size: 0.96em;
+      }
+     
+      .hero-btns {
+        gap: 7px;
+      }
+      .hero-btns a {
+        font-size: 0.93em;
+        padding: 9px 9px;
+        min-width: 90px;
+      }
+      .socials a {
+        font-size: 1.09em;
+        margin: 0 2px;
+      }
+      .navbar-container ul.nav-links li a {
+        padding: 12px 8vw;
+        font-size: 1.03em;
+      }
+      .typewriter {
+        font-size: 0.97em;
+        min-height: 24px;
+        margin-bottom: 18px;
+        word-break: break-all;
+      }
+    }
     @media (max-width: 980px) {.navbar-container{padding:9px 2vw;}main{padding:0 2vw 18px 2vw;} }
     @media (max-width: 670px) {
       .navbar-container{padding:9px 2vw;}
@@ -295,14 +376,15 @@
       .hamburger{display:flex;}
       header{padding:98px 3vw 46px 3vw;}
     }
-    section:first-of-type { margin-top: 33px; } /* extra space for top content */
+    section:first-of-type { margin-top: 33px; }
   </style>
 </head>
 <body>
   <!-- NAVBAR -->
   <nav>
     <div class="navbar-container">
-        <div class="hamburger" id="hamburger">
+     
+      <div class="hamburger" id="hamburger">
         <span></span><span></span><span></span>
       </div>
       <ul class="nav-links" id="navLinks">
@@ -336,40 +418,45 @@
   <main>
     <section id="about" class="glass">
       <h2>Professional Summary</h2>
+<div class="intern-box">
       <p>Java Developer with 3+ years of expertise in building scalable, robust web applications using Spring Boot, REST APIs, and Microservices. Adept at AWS, automation, and optimizing databases for fast, secure, and cost-effective solutions. Collaborative, proactive, and passionate about solving real-world problems with cutting-edge tech.</p>
-    </section>
+</div>   
+ </section>
     <section id="skills" class="glass">
       <h2>Technical Skills</h2>
       <ul class="skills-list">
-  <li><i class="fab fa-java"></i> Java</li>
-  <li><i class="fab fa-js"></i> JavaScript</li>
-  <li><i class="fas fa-database"></i> MySQL</li>
-  <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg" alt="AWS Athena" style="width:18px;height:18px;vertical-align:middle;"> AWS Athena</li>
-  <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/spring.svg" alt="Spring Boot" style="width:18px;height:18px;vertical-align:middle;"> Spring Boot</li>
-  <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/spring.svg" alt="Spring MVC" style="width:18px;height:18px;vertical-align:middle;"> Spring MVC</li>
-  <li><span style="font-size:1.12em;">&#128274;</span> Spring Security</li>
-  <li><i class="fas fa-exchange-alt"></i> REST APIs</li>
-  <li><i class="fas fa-network-wired"></i> Microservices</li>
-  <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/hibernate.svg" alt="Hibernate" style="width:18px;height:18px;vertical-align:middle;"> Hibernate</li>
-  <li><i class="fab fa-html5"></i> HTML5</li>
-  <li><i class="fab fa-css3-alt"></i> CSS3</li>
-  <li><i class="fas fa-code"></i> JSP</li>
-  <li><i class="fas fa-code"></i> jQuery</li>
-  <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
-  <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg" alt="AWS S3" style="width:18px;height:18px;vertical-align:middle;"> AWS S3</li>
-  <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/ansible.svg" alt="Ansible" style="width:18px;height:18px;vertical-align:middle;"> Ansible</li>
-  <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/meta.svg" alt="Meta API" style="width:18px;height:18px;vertical-align:middle;"> Meta API</li>
-  <li><i class="fas fa-laptop-code"></i> Eclipse</li>
-  <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apachetomcat.svg" alt="Tomcat" style="width:18px;height:18px;vertical-align:middle;"> Tomcat</li>
-  <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apachemaven.svg" alt="Maven" style="width:18px;height:18px;vertical-align:middle;"> Maven</li>
-  <li><i class="fas fa-vial"></i> Postman</li>
-  <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/jira.svg" alt="JIRA" style="width:18px;height:18px;vertical-align:middle;"> JIRA</li>
-</ul>
+        <li><i class="fab fa-java"></i> Java</li>
+        <li><i class="fab fa-js"></i> JavaScript</li>
+        <li><i class="fas fa-database"></i> MySQL</li>
+        <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg" alt="AWS Athena" style="width:18px;height:18px;vertical-align:middle;"> AWS Athena</li>
+        <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/spring.svg" alt="Spring Boot" style="width:18px;height:18px;vertical-align:middle;"> Spring Boot</li>
+        <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/spring.svg" alt="Spring MVC" style="width:18px;height:18px;vertical-align:middle;"> Spring MVC</li>
+        <li><span style="font-size:1.12em;">&#128274;</span> Spring Security</li>
+        <li><i class="fas fa-exchange-alt"></i> REST APIs</li>
+        <li><i class="fas fa-network-wired"></i> Microservices</li>
+        <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/hibernate.svg" alt="Hibernate" style="width:18px;height:18px;vertical-align:middle;"> Hibernate</li>
+        <li><i class="fab fa-html5"></i> HTML5</li>
+        <li><i class="fab fa-css3-alt"></i> CSS3</li>
+        <li><i class="fas fa-code"></i> JSP</li>
+        <li><i class="fas fa-code"></i> jQuery</li>
+        <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
+        <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg" alt="AWS S3" style="width:18px;height:18px;vertical-align:middle;"> AWS S3</li>
+        <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/ansible.svg" alt="Ansible" style="width:18px;height:18px;vertical-align:middle;"> Ansible</li>
+        <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/meta.svg" alt="Meta API" style="width:18px;height:18px;vertical-align:middle;"> Meta API</li>
+        <li><i class="fas fa-laptop-code"></i> Eclipse</li>
+        <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apachetomcat.svg" alt="Tomcat" style="width:18px;height:18px;vertical-align:middle;"> Tomcat</li>
+        <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apachemaven.svg" alt="Maven" style="width:18px;height:18px;vertical-align:middle;"> Maven</li>
+        <li><i class="fas fa-vial"></i> Postman</li>
+        <li><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/jira.svg" alt="JIRA" style="width:18px;height:18px;vertical-align:middle;"> JIRA</li>
+      </ul>
     </section>
     <section id="exp" class="glass">
       <h2>Experience</h2>
+<div class="intern-box">
       <div class="exp-item">
         <h3>Associate Java Developer, ValueFirst <small>(May 2022 – Present, Gurugram)</small></h3>
+
+
         <ul>
           <li>Increased efficiency by 40% via optimized CRUD operations</li>
           <li>Boosted security (2FA, Spring Security + OTP)</li>
@@ -383,6 +470,7 @@
           <li>Cut manual monitoring effort by 60% (alert/filter tools)</li>
         </ul>
       </div>
+</div>
     </section>
     <section id="projects" class="glass">
       <h2>Projects</h2>
@@ -410,18 +498,24 @@
     </section>
     <section id="edu" class="glass">
       <h2>Education</h2>
+<div class="intern-box">
+
       <ul class="edu-list">
         <li>B.Tech (CSE), Galgotias University (2018–22)</li>
         <li>High School, Bal Bharti School (Prayagraj)</li>
       </ul>
+</div>
     </section>
     <section id="achieve" class="glass">
       <h2>Achievements</h2>
+<div class="intern-box">
+
       <ul class="achieve-list">
         <li>Star of the Quarter, ValueFirst (Mar 2024)</li>
         <li>FIDE Candidate Master, Chess (2022)</li>
         <li>2nd Place, Chess, National Fest 2019</li>
       </ul>
+</div>
     </section>
     <section id="contact" class="glass">
       <h2>Contact Me</h2>
@@ -517,7 +611,7 @@
           ctx.shadowColor="#f500f9";
           ctx.shadowBlur=18;
           ctx.fill();
-          dot.x+=(0.6*dot.d);dot.y+=Math.sin(dot.x/93)*0.3;// subtle drift
+          dot.x+=(0.6*dot.d);dot.y+=Math.sin(dot.x/93)*0.3;
           if(dot.x>w){dot.x=0;}if(dot.x<0){dot.x=w;}
           if(dot.y>h){dot.y=0;}if(dot.y<0){dot.y=h;}
         }
